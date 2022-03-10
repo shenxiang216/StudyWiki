@@ -16,6 +16,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
     />
+<link rel="icon" href="./favicon.ico">
     <link
       rel="stylesheet"
       href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css"
@@ -43,16 +44,14 @@
 </style>
   <body>
     <nav>
-      <a href="#/">项目</a>
-      <a href="#/home1">home1</a>
-      <a href="#/bar/a">bar/a</a>
-    </nav>
+  <a href="#/">Navbar</a> 
+</nav>
     <div id="app"></div>
     <script>
       window.$docsify = {
         name: "",
         repo: "",
-        loadNavBar:true,
+        loadNavbar: '_navbar.md',
         loadSidebar: true,
         coverpage: true,
         subMaxLevel: 6,
@@ -72,6 +71,7 @@
           // },
           depth: 6, // 搜索标题的最大程级, 1 - 6
         },
+
       }
     </script>
     <!-- Docsify v4 -->
@@ -81,6 +81,5 @@
     <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
     <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
-
   </body>
 </html>

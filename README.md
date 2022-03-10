@@ -1,15 +1,12 @@
-# Headline
+## 个人知识库
 
-> An awesome project.
+> 首页暂时还没想好！
 
-
-
-# LALALAL
-
-# 啊
+* 解决中文搜索结果的title未解码问题
 
 ```javascript
-dad
+document.getElementsByClassName("results-panel")[0].children[0].children[0].children[0].innerText = decodeURI(document.getElementsByClassName("results-panel")[0].children[0].children[0].children[0].innerText)
 ```
 
-document.getElementsByClassName("results-panel")[0].children[0].children[0].children[0].innerText = decodeURI(document.getElementsByClassName("results-panel")[0].children[0].children[0].children[0].innerText)
+
+
