@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./normalize.css" />
+    <title>css复习</title>
+  </head>
+  <style></style>
+  <body>
+    <h1 id="fangdou">防抖</h1>
+    <h1 id="jieliu">节流</h1>
+  </body>
+  <script>
+      'use strict'
+    //防抖
+    function debounce(fn, delay = 1000) {
+      console.log(2, this)
+      let timer // 维护一个 timer
+      return function () {
+        console.log(3, this)
+        let _this = this // 取debounce执行作用域的this
+        let args = arguments
+        if (timer) {
+          clearTimeout(timer)
+        }
+        timer = setTimeout(function () {
+          fn.apply(_this, args) // 用apply指向调用debounce的对象，相当于_this.fn(args);
+          // fn(args)
+          console.log(4, _this)
+          console.log('4-2 this', this)
+        }, delay)
+      }
+    }
+    // test
+    function testDebounce(e, content) {
+      console.log(5, this)
+    }
+    let testDebounceFn = debounce(testDebounce, 1000) // 防抖函数
+    document.getElementById('fangdou').addEventListener('click', function (e) {
+      console.log(1, this)
+      let obj = {
+        name:'zhao'
+      }
+      testDebounceFn.call(obj,e, 'debounce') // 给防抖函数传参
+    })
+
+    //节流
+    function throttle(fn, delay) {
+      var timer
+      return function () {
+        var _this = this
+        var args = arguments
+        if (timer) {
+          return
+        }
+        timer = setTimeout(function () {
+          fn.apply(_this, args)
+          timer = null // 在delay后执行完fn之后清空timer，此时timer为假，throttle触发可以进入计时器
+        }, delay)
+      }
+    }
+    function testThrottle(e, content) {
+      console.log(e, content)
+    }
+    var testThrottleFn = throttle(testThrottle, 1000) // 节流函数
+    document.getElementById('jieliu').addEventListener('click', function (e) {
+      testThrottleFn(e, 'throttle') // 给节流函数传参
+    })
+  </script>
+</html>

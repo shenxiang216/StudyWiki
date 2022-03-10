@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./normalize.css" />
+    <title>css复习</title>
+  </head>
+  <style>
+    * {
+      color: #fff;
+    }
+    header {
+      background-color: blue;
+    }
+    .main {
+      background-color: orange;
+      padding: 0 100px; /* 左右两边的padding来放置left和right区域 */
+    }
+    .left,
+    .center,
+    .right {
+      float: left;
+    }
+    .center {
+      background-color: purple;
+      width: 100%; /* 这会把left和right挤到下一行 */
+    }
+    .left {
+      background-color: red;
+      width: 100px;
+      margin-left: -100%; /* 把left移动到和center同一行并且左边对齐 */
+      position: relative;
+      left: -100px; /* 再向左移动到main的padding区域,就不会挡住center了 */
+    }
+    .right {
+      background-color: grey;
+      width: 100px;
+      margin-left: -100px; /* 把left移动到和center同一行并且右边对齐 */
+      position: relative;
+      left: 100px; /* 向右移动到右边的padding区域*/
+    }
+    footer {
+      background-color: pink;
+    }
+    /* 清除浮动 */
+    .clear-fix::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+  </style>
+  <body>
+    <header>header</header>
+    <div class="main clear-fix">
+      <div class="center">玩亚索</div>
+      <div class="left">睡觉</div>
+      <div class="right">吃饭</div>
+    </div>
+    <div class="bottom">bottom</div>
+  </body>
+</html>

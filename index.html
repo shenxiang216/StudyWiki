@@ -1,0 +1,86 @@
+<!--
+ * @Author: Deep Lane
+ * @Date: 2022-03-09 11:23:40
+ * @LastEditors: Deep Lane
+ * @LastEditTime: 2022-03-09 15:02:06
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Deep Lane's Wiki</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="Description" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
+    />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css"
+    />
+  </head>
+<style>
+// 美化滚动条
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 0;
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  cursor: pointer;
+  border-radius: 5px;
+  background: #4cc9f0;
+  transition: color 0.2s ease;
+}
+</style>
+  <body>
+    <nav>
+      <a href="#/">项目</a>
+      <a href="#/home1">home1</a>
+      <a href="#/bar/a">bar/a</a>
+    </nav>
+    <div id="app"></div>
+    <script>
+      window.$docsify = {
+        name: "",
+        repo: "",
+        loadNavBar:true,
+        loadSidebar: true,
+        coverpage: true,
+        subMaxLevel: 6,
+        // 完整配置参数
+        search: {
+          maxAge: 86400000, // 过期时间，单位毫秒，默认一天
+          // paths: [], // or 'auto'，匹配文件路径
+          placeholder: "在这里搜索", // 搜索提示框文字， 支持本地化，例子在下面
+          // placeholder: {
+          //   '/zh-cn/': '搜索',
+          //   '/': 'Type to search'
+          // },
+          noData: "找不到结果", // 找不到结果文字提示，支持本地化，例子在下面
+          // noData: {
+          //   '/zh-cn/': '找不到结果',
+          //   '/': 'No Results'
+          // },
+          depth: 6, // 搜索标题的最大程级, 1 - 6
+        },
+      }
+    </script>
+    <!-- Docsify v4 -->
+    <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+    <!-- 引入搜索模块 -->
+    <script src="//unpkg.com/docsify/lib/plugins/search.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
+    <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+
+  </body>
+</html>

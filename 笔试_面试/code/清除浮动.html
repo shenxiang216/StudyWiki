@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./normalize.css" />
+    <title>实践</title>
+  </head>
+  <style>
+    .news {
+      background-color: gray;
+      border: solid 1px black;
+      /* overflow: hidden; */
+    }
+
+    .news img {
+      float: left;
+    }
+
+    .news p {
+      float: right;
+    }
+
+    .clear {
+      clear: both;
+    }
+    .clearfix::after {
+      content: '020';
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden;
+    }
+
+    .clearfix {
+      /* 触发 hasLayout */
+      zoom: 1;
+    }
+  </style>
+  <body>
+    <div class="news clearfix">
+      <img src="./pic.jpg" />
+      <p>some text</p>
+      <!-- <div class="clear"></div> -->
+    </div>
+  </body>
+</html>

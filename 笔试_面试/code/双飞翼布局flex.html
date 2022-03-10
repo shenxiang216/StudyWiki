@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./normalize.css" />
+    <title>css复习</title>
+  </head>
+  <style>
+    * {
+      color: #fff;
+    }
+    header {
+      background-color: blue;
+    }
+    .flex-box {
+      display: flex;
+    }
+    .flex-center {
+      background-color: purple;
+      flex-grow: 1;
+    }
+    .flex-left {
+      background-color: red;
+      order: -1;
+      flex: 0 0 100px;
+    }
+    .flex-right {
+      background-color: green;
+      flex: 0 0 100px;
+    }
+    footer {
+      background-color: pink;
+    }
+  </style>
+  <body>
+    <header>header</header>
+    <div class="flex-box">
+      <div class="flex-center">玩亚索</div>
+      <div class="flex-left">睡觉</div>
+      <div class="flex-right">吃饭</div>
+    </div>
+    <footer>footer</footer>
+  </body>
+</html>
