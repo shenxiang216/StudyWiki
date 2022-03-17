@@ -35,6 +35,34 @@
 
 [^]*console.log[^]*
 
+```
+<script>//禁用右键（防止右键查看源代码） 
+    window.oncontextmenu = function () {
+      return false;
+    }
+    // //禁止任何键盘敲击事件（防止F12和shift+ctrl+i调起开发者工具） 
+    // window.onkeydown = window.onkeyup = window.onkeypress = function () {
+    //     window.event.returnValue = false;
+    //     return false;
+    // }
+    window.onkeydown = window.onkeyup = window.onkeypress = function(event) {
+        let e = event || window.event || arguments.callee.caller.arguments[0];
+        //判断是否为F12
+        if (e && e.keyCode == 123) {
+          e.returnValue = false;
+          return false;
+        }
+        //判断shift、ctrl、i同时按下(调用控制台)
+        if (e.ctrlKey && e.shiftKey && (e.keyCode == 105 || e.keyCode == 73)) {
+          e.returnValue = false;
+          return false;
+        }
+      }</script>
+      
+      // 破解
+      javascript:(function() { function R(a){ona = "on"+a; if(window.addEventListener) window.addEventListener(a, function (e) { for(var n=e.originalTarget; n; n=n.parentNode) n[ona]=null; }, true); window[ona]=null; document[ona]=null; if(document.body) document.body[ona]=null; } R("contextmenu"); R("click"); R("mousedown"); R("mouseup"); R("selectstart");})()
+```
+
 
 
 **有效** 二叉搜索树定义如下：

@@ -159,3 +159,29 @@ GET产生一个TCP数据包；POST产生两个TCP数据包。
 ![img](http://mmbiz.qpic.cn/mmbiz/VUGnGjllRE5vZcld02bjOjWPPBRXYdhLyfrfWEnMQlicIoNbaQJCicpKjOVQp8tNjU9Zp8Eia40om3vTah9aZEF7w/640?wx_fmt=jpeg)
 
 结束！！！
+
+
+
+## get请求传参长度的误区
+
+误区：我们经常说get请求参数的大小存在限制，而post请求的参数大小是无限制的。
+
+实际上HTTP 协议从未规定 GET/POST 的请求长度限制是多少。对get请求参数的限制是来源与浏览器或web服务器，浏览器或web服务器限制了url的长度。为了明确这个概念，我们必须再次强调下面几点:
+
+HTTP 协议 未规定 GET 和POST的长度限制
+
+GET的最大长度显示是因为 浏览器和 web服务器限制了 URI的长度
+
+不同的浏览器和WEB服务器，限制的最大长度不一样
+
+要支持IE，则最大长度为2083byte，若只支持Chrome，则最大长度 8182byte
+
+## ● 补充get和post请求在缓存方面的区别
+
+post/get的请求区别，具体不再赘述。
+
+补充补充一个get和post在缓存方面的区别：
+
+get请求类似于查找的过程，用户获取数据，可以不用每次都与数据库连接，所以可以使用缓存。
+
+post不同，post做的一般是修改和删除的工作，所以必须与数据库交互，所以不能使用缓存。因此get请求适合于请求缓存。

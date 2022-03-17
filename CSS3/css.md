@@ -186,5 +186,157 @@ border-image 属性允许你指定一个图片作为边框！ 用于创建上文
 - 指定**三个**值时，第一个值应用于**上边**，第二个值应用于**右边和左边**，第三个则应用于**下边**的外边距。
 - 指定**四个**值时，依次（顺时针方向）作为**上边**，**右边**，**下边**，和**左边**的外边距。
 
+## ● visibility=hidden, opacity=0，display:none
+
+- opacity=0，该元素隐藏起来了，但不会改变页面布局，并且，如果该元素已经绑定一些事件，如click事件，那么点击该区域，也能触发点击事件 
+- visibility=hidden，该元素隐藏起来了，但不会改变页面布局，但是不会触发该元素已经绑定的事件。
+- display=none，把元素隐藏起来，并且会改变页面布局，可以理解成在页面中把该元素删除掉一样。
+
+## ● 双边距重叠问题（外边距折叠）
+
+多个相邻（兄弟或者父子关系）普通流的块元素垂直方向marigin会重叠
+
+折叠的结果为：
+
+两个相邻的外边距都是正数时，折叠结果是它们两者之间较大的值。
+两个相邻的外边距都是负数时，折叠结果是两者绝对值的较大值。
+两个外边距一正一负时，折叠结果是两者的相加的和。
+
+## ● css动画如何实现
+
+创建动画序列，需要使用animation属性或其子属性，该属性允许配置动画时间、时长以及其他动画细节，但该属性不能配置动画的实际表现，动画的实际表现是由 @keyframes规则实现，具体情况参见使用keyframes定义动画序列小节部分。
+
+transition也可实现动画。transition强调过渡，是元素的一个或多个属性发生变化时产生的过渡效果，同一个元素通过两个不同的途径获取样式，而第二个途径当某种改变发生（例如hover）时才能获取样式，这样就会产生过渡动画。
+
+## ● 如何实现图片在某个容器中居中的？
+
+父元素固定宽高，利用定位及设置子元素margin值为自身的一半。
+
+父元素固定宽高，子元素设置position: absolute，margin：auto平均分配margin
+
+css3属性transform。子元素设置position: absolute; left: 50%; top: 50%;transform: translate(-50%,-50%);即可。
+
+将父元素设置成display: table, 子元素设置为单元格 display: table-cell。
+
+弹性布局display: flex。设置align-items: center; justify-content: center
+
+## ● 如何实现元素的垂直居中
+
+法一：父元素display:flex,align-items:center;
+
+法二：元素绝对定位，top:50%，margin-top：-（高度/2）
+
+法三：高度不确定用transform：translateY（-50%）
+
+法四：父元素table布局，子元素设置vertical-align:center;
+
+## ● 三栏布局的实现方式，尽可能多写，浮动布局时，三个div的生成顺序有没有影响
+
+三列布局又分为两种，两列定宽一列自适应，以及两侧定宽中间自适应
+
+两列定宽一列自适应：
+
+1、使用float+margin：
+
+给div设置float：left，left的div添加属性margin-right：left和center的间隔px,right的div添加属性margin-left：left和center的宽度之和加上间隔
+
+2、使用float+overflow：
+
+给div设置float：left，再给right的div设置overflow:hidden。这样子两个盒子浮动，另一个盒子触发bfc达到自适应
+
+3、使用position：
+
+父级div设置position：relative，三个子级div设置position：absolute，这个要计算好盒子的宽度和间隔去设置位置，兼容性比较好，
+
+4、使用table实现：
+
+父级div设置display：table，设置border-spacing：10px//设置间距，取值随意,子级div设置display:table-cell，这种方法兼容性好，适用于高度宽度未知的情况，但是margin失效，设计间隔比较麻烦，
+
+5、flex实现：
+
+parent的div设置display：flex；left和center的div设置margin-right；然后right 的div设置flex：1；这样子right自适应，但是flex的兼容性不好
+
+6、grid实现：
+
+parent的div设置display：grid，设置grid-template-columns属性，固定第一列第二列宽度，第三列auto，
+
+对于两侧定宽中间自适应的布局，对于这种布局需要把center放在前面，可以采用双飞翼布局：圣杯布局，来实现，也可以使用上述方法中的grid，table，flex，position实现
 
 
+
+## ● 有一个width300，height300，怎么实现在屏幕上垂直水平居中
+
+对于行内块级元素，
+
+1、父级元素设置text-alig：center，然后设置line-height和vertical-align使其垂直居中，最后设置font-size：0消除近似居中的bug
+
+2、父级元素设置display：table-cell，vertical-align：middle达到水平垂直居中
+
+3、采用绝对定位，原理是子绝父相，父元素设置position：relative，子元素设置position：absolute，然后通过transform或margin组合使用达到垂直居中效果，设置top：50%，left：50%，transform：translate（-50%，-50%）
+
+4、绝对居中，原理是当top,bottom为0时，margin-top&bottom设置auto的话会无限延伸沾满空间并平分，当left，right为0时,margin-left&right设置auto会无限延伸占满空间并平分，
+
+5、采用flex，父元素设置display：flex，子元素设置margin：auto
+
+6、视窗居中，vh为视口单位，50vh即是视口高度的50/100，设置margin：50vh auto 0，transform：translate(-50%)
+
+## ● display：table和本身的table有什么区别
+
+Display:table和本身table是相对应的，区别在于，display：table的css声明能够让一个html元素和它的子节点像table元素一样，使用基于表格的css布局，是我们能够轻松定义一个单元格的边界，背景等样式，而不会产生因为使用了table那样的制表标签导致的语义化问题。
+
+之所以现在逐渐淘汰了table系表格元素，是因为用div+css编写出来的文件比用table边写出来的文件小，而且table必须在页面完全加载后才显示，div则是逐行显示，table的嵌套性太多，没有div简洁
+
+## ● 设置一个元素的背景颜色，背景颜色会填充哪些区域？
+
+background-color设置的背景颜色会填充元素的content、padding、border区域，
+
+## ● 用css实现一个硬币旋转的效果
+
+```
+#euro {
+width: 150px;
+height: 150px;
+margin-left: -75px;
+margin-top: -75px;
+position: absolute;
+top: 50%;
+left: 50%;
+transform-style: preserve-3d;
+animation: spin 2.5s linear infinite;
+}
+.back {
+background-image: url("/uploads/160101/backeuro.png");
+width: 150px;
+height: 150px;
+}
+.middle {
+background-image: url("/uploads/160101/faceeuro.png");
+width: 150px;
+height: 150px;
+transform: translateZ(1px);
+position: absolute;
+top: 0;
+}
+.front {
+background-image: url("/uploads/160101/faceeuro.png");
+height: 150px;
+position: absolute;
+top: 0;
+transform: translateZ(10px);
+width: 150px;
+}
+@keyframes spin {
+0% {
+transform: rotateY(0deg);
+}
+100% {
+transform: rotateY(360deg);
+}
+}
+```
+
+## ● 实现一个两列等高布局，讲讲思路
+
+为了实现两列等高，可以给每列加上 padding-bottom:9999px;
+
+margin-bottom:-9999px;同时父元素设置overflow:hidden;
