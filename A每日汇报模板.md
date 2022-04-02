@@ -1,3 +1,21 @@
+全局安装：`npm install -g treer`
+
+使用示例：`treer -e ./result.txt -i node_modules`
+
+> 遍历到result.txt文件，忽略node_modules
+>
+> **缺陷**:格式固定,参数顺序前后顺序不可随意调换，不能选择目录层级
+
+
+https://www.npmjs.com/package/treer
+
+
+* [ES6 入门教程](https://es6.ruanyifeng.com/)
+* [Koa2进阶学习笔记](https://chenshenhai.github.io/koa2-note/)
+* [JavaScript语言精粹](https://kingyinliang.github.io/PDF/JavaScript%E8%AF%AD%E8%A8%80%E7%B2%BE%E7%B2%B9.pdf)
+* [深入理解 TypeScript](https://jkchao.github.io/typescript-book-chinese/)
+* [深入浅出node.js](http://blog.songqingbo.cn/pdf/nodejs/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BANode.js.pdf)
+
 # 待完成项目
 
 ## 1、闪电速传web版  小程序版  app版
