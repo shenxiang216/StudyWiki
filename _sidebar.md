@@ -45,6 +45,7 @@
    - [JS笔记.md](JavaScript_Typescript/JS笔记.md)
    - [map()&join().md](JavaScript_Typescript/map()&join().md)
    - [map和set.md](JavaScript_Typescript/map和set.md)
+   - [Math.random().md](JavaScript_Typescript/Math.random().md)
    - [new操作符具体做了什么.md](JavaScript_Typescript/new操作符具体做了什么.md)
    - [Promise和asyncawait的异常处理.md](JavaScript_Typescript/Promise和asyncawait的异常处理.md)
    - [script中defer和async的区别.md](JavaScript_Typescript/script中defer和async的区别.md)
