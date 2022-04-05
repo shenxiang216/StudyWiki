@@ -15,8 +15,6 @@
 - 🔍 `Element-plus UI`
 - 📌 `And More...`
 
-![图片](https://raw.githubusercontent.com/coderlyu/au-blog/master/docs/.vuepress/public/images/blogs/vite-1.png) ![图片](https://raw.githubusercontent.com/coderlyu/au-blog/master/docs/.vuepress/public/images/blogs/vite-2.png) ![图片](https://raw.githubusercontent.com/coderlyu/au-blog/master/docs/.vuepress/public/images/blogs/vite-3.png) ![图片](https://raw.githubusercontent.com/coderlyu/au-blog/master/docs/.vuepress/public/images/blogs/vite-4.png) ![图片](https://raw.githubusercontent.com/coderlyu/au-blog/master/docs/.vuepress/public/images/blogs/vite-5.png)
-
 ## [#](https://coderly.cn/pages/33b18f/#初始化项目)初始化项目
 
 创建项目
@@ -28,18 +26,11 @@ yarn create @vitejs/app <project-name>
 npm init @vitejs/app <project-name>
 ```
 
-1
-2
-3
-4
-
 以博主这个项目为例：文件名为 `vite-frontend-template`
 
 ```text
 npm init @vitejs/app vite-frontend-template
 ```
-
-1
 
 此时按下回车，可以看到以下页面，博主选择的是 `vue-ts`（上下键可以切换选择的模板），按下回车之后会给你一个配置好了`typescript` 的 `vite` 配置模板
 ![图片](https://raw.githubusercontent.com/coderlyu/au-blog/master/docs/.vuepress/public/images/blogs/vite-6.png)
@@ -52,20 +43,13 @@ npm init @vitejs/app vite-frontend-template
   npm run dev
 ```
 
-1
-2
-3
-
 就可以看到项目模板运行之后的样子，本地访问 `http://localhost:3000/`
-![图片](https://raw.githubusercontent.com/coderlyu/au-blog/master/docs/.vuepress/public/images/blogs/vite-7.png)
 
 ## [#](https://coderly.cn/pages/33b18f/#安装-vue-router-vuex)安装 `vue-router`，`vuex`
 
 ```text
 npm i vue-router@next vuex@next
 ```
-
-1
 
 ### [#](https://coderly.cn/pages/33b18f/#vue-router)`vue-router`
 
@@ -113,46 +97,6 @@ const router = createRouter({
 export default router
 ```
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-
 在 `src` 目录下再新建一个 `components/About.vue` 文件，内容如下：
 
 ```html
@@ -172,22 +116,6 @@ export default router
   })
 </script>
 ```
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
 
 ### [#](https://coderly.cn/pages/33b18f/#vuex)`vuex`
 
@@ -220,31 +148,6 @@ export const store =
   }
 ```
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-
 最后修改下 `App.vue`
 
 ```js
@@ -274,44 +177,15 @@ export default defineComponent({
 </style>
 ```
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-
 运行之后，你可以看到如下页面`http://localhost:3000/home`
-![图片](https://raw.githubusercontent.com/coderlyu/au-blog/master/docs/.vuepress/public/images/blogs/vite-8.png)
 
 `about` 页面 `http://localhost:3000/about`
-![图片](https://raw.githubusercontent.com/coderlyu/au-blog/master/docs/.vuepress/public/images/blogs/vite-9.png)
 
 ## [#](https://coderly.cn/pages/33b18f/#安装-element-plus)安装 `element-plus`
 
 ```text
 npm install element-plus --save
 ```
-
-1
 
 ### [#](https://coderly.cn/pages/33b18f/#按需引入)按需引入
 
@@ -333,21 +207,6 @@ app.use(store, key)
 app.use(router)
 app.mount('#app')
 ```
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
 
 样式按钮引入可以使用插件 `vite-plugin-style-import`
 
@@ -377,27 +236,6 @@ export default defineConfig({
 })
 ```
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-
 在 `About.vue` 页面使用
 
 ```html
@@ -419,30 +257,11 @@ export default defineConfig({
 </script>
 ```
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-
 此时访问 `http://localhost:3000/about`，可以看到按钮已经出来了
-![图片](https://raw.githubusercontent.com/coderlyu/au-blog/master/docs/.vuepress/public/images/blogs/vite-10.png)
 
 ## [#](https://coderly.cn/pages/33b18f/#写在最后)写在最后
 
 目前 `vue3.x` 的生态环境在不断完善，使用 vite 开发时，可以在`npm`上搜 `vite-`，里面还是有很多能用的 vite 插件，比如`vite-plugin-mockit`，`vite-svg-loader` ...
-![图片](https://raw.githubusercontent.com/coderlyu/au-blog/master/docs/.vuepress/public/images/blogs/vite-11.png)
 
 - 同时可以多关注 `vue3.x` 官网 `https://v3.vuejs.org/guide/introduction.html`
 - `vuex4.x` 官网：`https://next.vuex.vuejs.org/`

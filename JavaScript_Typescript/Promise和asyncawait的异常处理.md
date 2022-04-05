@@ -1,7 +1,5 @@
 `Promise` 和 `async/await` 在 JavaScript、TypeScript 中已经很常见了，但你有遇到过这个报错吗？
 
-![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d25e95cf4ef54b76a35708b3b8d27bb3~tplv-k3u1fbpfcp-zoom-in-crop-mark:1304:0:0:0.awebp)
-
 这篇文章为你分析此类问题的成因和解决办法。
 
 ## 先看一个典型的例子
@@ -90,7 +88,6 @@ async function main(){
 }
 
 main();
-复制代码
 ```
 
 依旧不行！ 因为 `Promise` 虽然出现在了 `async` 方法中，但由于没有被 `await`，所以其异常视为全局异常。
@@ -109,7 +106,6 @@ new Promise(async rs=>{
 }).catch(e=>{
     console.log('异常被捕获到了2')
 })
-复制代码
 ```
 
 上面2个 `Promise` 里的异常，能被捕获到吗？
@@ -129,11 +125,6 @@ new Promise(rs=>{
     // 由于异常并未向上抛给外层Promise，所以此处catch不到
     console.log('异常被捕获到了2')
 })
-复制代码
 ```
 
 如之前所述，`Promise` 内抛出的异常，无论身在何处，只要未经捕获，就会直接上升为全局“未经捕获的异常”，而不是层层抛出。
-作者：TypeScript全栈开发
-链接：https://juejin.cn/post/6982087363853811743
-来源：稀土掘金
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
