@@ -6,23 +6,11 @@
 
 在性格方面：我觉得自己做事踏实认真，吃苦耐劳，具有抗压能力。平时善于与人相处，具有良好的团队合作精神。
 
-最后，我知道自己可能实践经验不足，但是我愿意不断学习，争取让自己全面发展。希望自己有幸成为贵公司的一名实习生。
+最后，我知道自己可能实践经验不足，希望通过不断学习，争取让自己全面发展。
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
->  我是攻城狮深巷，欢迎关注我的[博客:Deep Lane's Blog](https://mmyxyz.xyz/)和[Github:shenxiang216](https://github.com/shenxiang216)，一起学习更多技术！
+>  我是程序猿深巷，欢迎关注我的[博客:Deep Lane's Blog](https://mmyxyz.xyz/)和[Github:shenxiang216](https://github.com/shenxiang216)，一起学习更多技术！
 
 
 
