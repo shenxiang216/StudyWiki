@@ -232,4 +232,251 @@
   解决方案2、
   实例的image对象的设置img.crossOrigin = ' ';并且在服务器端设置Access-Control-Allow-Origin:*(或运行的域名)
 
+* ```
+  在CSS中，html中的标签元素大体被分为三种不同的类型： 块状元素、内联元素(又叫行内元素)和内联块状元素。 
+  
+  常用的块状元素有：
+   <div>、<p>、<h1>…<h6>、<ol>、<ul>、<dl>、<table>、<address>、<blockquote> 、<form>
+   什么是块级元素？ 
+  在html中<div>、<p>、<h1>、<form>、<ul>和<li>就是块级元素。设置display:block就是将元素显示为块级元素。如下代码就是将内联元素a转换为块状元素，从而使a元素具有块状元素特点。 a{display:block;} 
+  块级元素特点：
+   1、每个块级元素都从新的一行开始，并且其后的元素也另起一行。（真霸道，一个块级元素独占一行）;
+   2、元素的高度、宽度、行高以及顶和底边距都可设置。
+   3、元素宽度在不设置的情况下，是它本身父容器的100%（和父元素的宽度一致），除非设定一个宽度。 
+  
+  常用的内联元素有： 
+  <a>、<span>、<br>、<i>、<em>、<strong>、<label>、<q>、<var>、<cite>、<code> 在html中，<span>、<a>、<label>、<strong> 和<em>就是典型的内联元素（行内元素）（inline）元素。
+  当然块状元素也可以通过代码display:inline将元素设置为内联元素。如下代码就是将块状元素div转换为内联元素，从而使div 元素具有内联元素特点。
+   div{ display:inline; } ...... <div>我要变成内联元素</div> 
+  内联元素特点： 
+  1、和其他元素都在一行上； 
+  2、元素的高度、宽度及顶部和底部边距不可设置； （这是答案^-^）
+  3、元素的宽度就是它包含的文字或图片的宽度，不可改变。 
+  
+  常用的内联块状元素有：
+   <img>、<input>
+   内联块状元素（inline-block）就是同时具备内联元素、块状元素的特点，代码display:inline-block就是将元素设置为内联块状元素。
+  inline-block 元素特点： 
+  1、和其他元素都在一行上； 
+  2、元素的高度、宽度、行高以及顶和底边距都可设置。
+  ```
+
+* 解析：a:link,a:visited,a:hover,a:active 分别是什么意思?
+
+  \1. link:连接平常的状态
+
+  \2. visited:连接被访问过之后
+
+  \3. hover:鼠标放到连接上的时候
+
+  \4. active:连接被按下的时候
+
+  
+
+  正确顺序：“爱恨原则”（LoVe/HAte），即四种伪类的首字母:LVHA。再重复一遍正确的顺序：a:link、a:visited、a:hover、a:active .
+
+  
+
+  因为当鼠标经过未访问的链接，会同时拥有a:link、a:hover两种属性，a:link离它最近，所以它优先满足a:link，而放弃a:hover的重复定义。当鼠标经过已经访问过的链接，会同时拥有a:visited、a:hover两种属性，a:visited离它最近，所以它优先满足a:visited，而放弃a:hover的重复定义。究其原因，是css的就近原则“惹的祸”。
+
+* **浮动元素重叠**
+
+  1、行内元素与浮动元素发生重叠，边框、背景、内容都会显示在浮动元素之上
+
+  2、块级元素与浮动元素发生重叠，边框、背景会显示在浮动元素之下，内容会显示在浮动元素之上
+
+* 关于 CSS 的单位，以下说法错误的是：
+  正确答案: A   你的答案: B (错误)
+  百分比单位始终根据父元素相应值来计算
+  vw、vh、em、rem 都是相对单位
+  90deg 表示顺时针旋转 90 度
+  1s = 1000ms
+
+  %
+
+  一般宽泛的讲是相对于父元素，但是并不是十分准确。
+
+  对于普通定位元素就是我们理解的父元素
+  对于position: absolute;的元素是相对于已定位的父元素
+  对于position: fixed;的元素是相对于ViewPort（可视窗口）
+
+* 下面 CSS3 新增伪类中不正确的一个是？
+  正确答案: B   你的答案: D (错误)
+  p:first-of-type
+  p:only-of-child
+  p:nth-child(2)
+  :disabled
+
+  :only-child 选择器匹配属于其父元素的唯一子元素的每个元素。
+
+* 主流浏览器内核私有属性css前缀：mozilla内核 (firefox,flock等)     -moz
+                                                        webkit内核(safari,chrome等)   -webkit
+                                                        opera内核(opera浏览器)         -o
+                                                        trident内核(ie浏览器)               -ms
+
+* ```
+  button	定义可点击的按钮（大多与 JavaScript 使用来启动脚本）
+  checkbox	定义复选框。
+  color	定义拾色器。
+  date	定义日期字段（带有 calendar 控件）
+  datetime	定义日期字段（带有 calendar 和 time 控件）
+  datetime-local	定义日期字段（带有 calendar 和 time 控件）
+  month	定义日期字段的月（带有 calendar 控件）
+  week	定义日期字段的周（带有 calendar 控件）
+  time	定义日期字段的时、分、秒（带有 time 控件）
+  email	定义用于 e-mail 地址的文本字段
+  file	定义输入字段和 "浏览..." 按钮，供文件上传
+  hidden	定义隐藏输入字段
+  image	定义图像作为提交按钮
+  number	定义带有 spinner 控件的数字字段
+  password	定义密码字段。字段中的字符会被遮蔽。
+  radio	定义单选按钮。
+  range	定义带有 slider 控件的数字字段。
+  reset	定义重置按钮。重置按钮会将所有表单字段重置为初始值。
+  search	定义用于搜索的文本字段。
+  submit	定义提交按钮。提交按钮向服务器发送数据。
+  tel	定义用于电话号码的文本字段。
+  text	默认。定义单行输入字段，用户可在其中输入文本。默认是 20 个字符。
+  url	定义用于 URL 的文本字段。
+  ```
+
+* ```text
+  一、无继承性的属性
+  
+  1、display：规定元素应该生成的框的类型
+  
+  2、文本属性：
+  
+  vertical-align：垂直文本对齐
+  
+  text-decoration：规定添加到文本的装饰
+  
+  text-shadow：文本阴影效果
+  
+  white-space：空白符的处理
+  
+  unicode-bidi：设置文本的方向
+  
+  3、盒子模型的属性：width、height、margin 、margin-top、margin-right、margin-bottom、margin-left、border、border-style、border-top-style、border-right-style、border-bottom-style、border-left-style、border-width、border-top-width、border-right-right、border-bottom-width、border-left-width、border-color、border-top-color、border-right-color、border-bottom-color、border-left-color、border-top、border-right、border-bottom、border-left、padding、padding-top、padding-right、padding-bottom、padding-left
+  
+  4、背景属性：background、background-color、background-image、background-repeat、background-position、background-attachment
+  
+  5、定位属性：float、clear、position、top、right、bottom、left、min-width、min-height、max-width、max-height、overflow、clip、z-index
+  
+  6、生成内容属性：content、counter-reset、counter-increment
+  
+  7、轮廓样式属性：outline-style、outline-width、outline-color、outline
+  
+  8、页面样式属性：size、page-break-before、page-break-after
+  
+  9、声音样式属性：pause-before、pause-after、pause、cue-before、cue-after、cue、play-during
+  
+   
+  
+  二、有继承性的属性
+  
+  1、字体系列属性
+  
+  font：组合字体
+  
+  font-family：规定元素的字体系列
+  
+  font-weight：设置字体的粗细
+  
+  font-size：设置字体的尺寸
+  
+  font-style：定义字体的风格
+  
+  font-variant：设置小型大写字母的字体显示文本，这意味着所有的小写字母均会被转换为大写，但是所有使用小型大写字体的字母与其余文本相比，其字体尺寸更小。
+  
+  font-stretch：对当前的 font-family 进行伸缩变形。所有主流浏览器都不支持。
+  
+  font-size-adjust：为某个元素规定一个 aspect 值，这样就可以保持首选字体的 x-height。
+  
+  2、文本系列属性
+  
+  text-indent：文本缩进
+  
+  text-align：文本水平对齐
+  
+  line-height：行高
+  
+  word-spacing：增加或减少单词间的空白（即字间隔）
+  
+  letter-spacing：增加或减少字符间的空白（字符间距）
+  
+  text-transform：控制文本大小写
+  
+  direction：规定文本的书写方向
+  
+  color：文本颜色
+  
+  3、元素可见性：visibility
+  
+  4、表格布局属性：caption-side、border-collapse、border-spacing、empty-cells、table-layout
+  
+  5、列表布局属性：list-style-type、list-style-image、list-style-position、list-style
+  
+  6、生成内容属性：quotes
+  
+  7、光标属性：cursor
+  
+  8、页面样式属性：page、page-break-inside、windows、orphans
+  
+  9、声音样式属性：speak、speak-punctuation、speak-numeral、speak-header、speech-rate、volume、voice-family、pitch、pitch-range、stress、richness、、azimuth、elevation
+  
+   
+  
+  三、所有元素可以继承的属性
+  
+  1、元素可见性：visibility
+  
+  2、光标属性：cursor
+  
+   
+  
+  四、内联元素可以继承的属性
+  
+  1、字体系列属性
+  
+  2、除text-indent、text-align之外的文本系列属性
+  
+   
+  
+  五、块级元素可以继承的属性
+  
+  1、text-indent、text-align
+  ```
+
+* 关于 SVG 和 CANVAS，下面陈述正确的有?
+  正确答案: D F   你的答案: A C E (错误)
+  SVG 做动画性能要优于 CANVAS
+  CANVAS 做动画性能要优于 SVG
+  SVG 产生的 DOM 数量比 CANVAS 要少
+  CANVAS 产生的 DOM 数量比 SVG 要少
+  CANVAS 可以使用 CSS 设置动画样式
+  SVG 可以使用 CSS 设置动画样式
+
+* 伪元素
+
+  - 每条选择器最多只能包含一个伪元素
+    ![伪元素](https://uploadfiles.nowcoder.com/files/20201207/2814591_1607305247491/20201202122048307.png)
+
+    #### 伪类
+
+  - 每条选择器可以包含多个伪类
+    ![伪类](https://uploadfiles.nowcoder.com/files/20201207/2814591_1607305247479/20201202122114203.png)
+
+    #### 总结
+
+  - 伪元素的操作对象是新生成的dom元素，而不是原来dom结构里就存在的；而伪类恰好相反，伪类的操作对象是原来的dom结构里就存在的元素。
+
+  - 伪元素与伪类的根本区别在于：操作的对象元素是否存在于原来的dom结构里。
+
+  :nth-child(n),n从1开始计数
+
+  :nth-child(odd)和:nth-child(even),从1开始计数
+
+  :nth-child(an+b),n从0开始计数
+
 * 

@@ -1,3 +1,24 @@
+# 项目难点
+
+## lightjob
+
+* 长列表分页，节流
+* 长列表渲染
+* 筛选功能
+* 项目部署：环境搭建，nginx pm2 node ssl 域名
+
+## lightTools
+
+* load处理markdown
+
+## lightPass
+
+* 线上问题排查---日志，
+
+## lightOrder
+
+
+
 全局安装：`npm install -g treer`
 
 使用示例：`treer -e ./result.txt -i node_modules`

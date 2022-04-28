@@ -157,7 +157,7 @@
 
 ### 3、在 nginx 的配置文件中进行负载均衡的配置
 
-![image-20210821141950910](http://www.jiajia20141219forever.xyz/202108211419072.png)
+![image-20210821141950910](https://img-blog.csdnimg.cn/20201102193513560.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3pwZjE4MTM3NjM2Mzc=,size_16,color_FFFFFF,t_70#pic_center)
 
 ### 4、nginx 分配服务器策略
 
