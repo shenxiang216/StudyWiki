@@ -1,8 +1,7 @@
+# 为什么废弃react三个生命周期函数？
 自从React发布Fiber之后，更新速度日新月异，而生命周期也随之改变，虽然原有的一些生命周期函数面临废弃，但理解其背后更新的机制也是一种学习。
 
 [「React Fiber」 详细解析](https://zhuanlan.zhihu.com/p/424967867)
-
-## 为什么废弃react生命周期函数？
 
 新的生命周期增加了`static getDerivedStateFromProps()`以及`getSnapshotBeforeUpdate()`，废弃了原有的`componentWillMount()`、`componentWillUpdate()`以及`componentWillReceiveProps()`，
 
