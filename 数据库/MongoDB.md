@@ -83,6 +83,39 @@
       6-1、先启动服务
   
       6-2、键入 mongo 即可
+      
+      * db.createUser({
+      user: 'admin',   
+      pwd: 'Abc123++', 
+      roles:[{
+        role: 'root',   
+        db: 'admin'  
+      }]
+    })
+    
+    mongo -u admin -p Abc123++ --authenticationDatabase admin
+  
+  
+  db.createUser({
+    user: 'jobs',         
+    pwd: 'Abc123++',      
+    roles:[{
+      role: 'readWrite', 
+      db: 'jobs' 
+    }]
+  })
+      
+      
+  systemctl daemon-reload
+  systemctl status mongod.service
+  systemctl start mongod.service
+  
+  
+  
+  
+  systemctl restart mongod.service
+  netstat -lanp | grep "27017"
+  netstat -natp | grep 27017
   ```
 
 ## Node.js 连接 MongoDB
@@ -303,47 +336,5 @@
     obj.result.n 删除的条数。
     ```
 
-* mongodb备份——mongodump命令脚本语法如下：
-
-  * 备份：
-  
-    ```
-    mongodump -h dbhost -d dbname -o dbdirectory
-      
-      -h：
-      MongoDB 所在服务器地址，例如：127.0.0.1，当然也可以指定端口号：127.0.0.1:27017
-      
-      -d：
-      需要备份的数据库实例，例如：test
-      
-      -o：
-      备份的数据存放位置，例如：c:\data\dump，当然该目录需要提前建立，在备份完成后，系统自动在dump目录下建立一个test目录，这个目录里面存放该数据库实例的备份数据。
-    ```
-  
-  * 恢复：
-  
-    ```
-    mongorestore -h <hostname><:port> -d dbname <path>
-    --host <:port>, -h <:port>：
-    mongorestore -h 127.0.0.1:27017 -d bossJobs /etc/beifen/bossJobs
-    
-    MongoDB所在服务器地址，默认为： localhost:27017
-    
-    --db , -d ：
-    需要恢复的数据库实例，例如：test，当然这个名称也可以和备份时候的不一样，比如test2
-    
-    --drop：
-    恢复的时候，先删除当前数据，然后恢复备份的数据。就是说，恢复后，备份后添加修改的数据都会被删除，慎用哦！
-    
-    <path>：
-    mongorestore 最后的一个参数，设置备份数据所在位置，例如：c:\data\dump\test。
-    
-    你不能同时指定 <path> 和 --dir 选项，--dir也可以设置备份目录。
-    
-    --dir：
-    指定备份的目录
-    
-    你不能同时指定 <path> 和 --dir 选项。
-    ```
-  
+* 
 
