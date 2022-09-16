@@ -101,7 +101,6 @@
 - :cupid:Webpack
    - [Babel.md](Webpack/Babel.md)
    - [深入浅出webpack之基础配置篇.md](Webpack/深入浅出webpack之基础配置篇.md)
-- :cupid:书籍
 - :cupid:小程序
    - [API理解知乎.md](小程序/API理解知乎.md)
    - [小程序.md](小程序/小程序.md)
@@ -166,7 +165,7 @@
    - [输入URL到页面渲染的整个流程.md](网络/输入URL到页面渲染的整个流程.md)
 - :cupid:跨平台_Uniapp
    - [H5APP.md](跨平台_Uniapp/H5APP.md)
-   - [跨平台开发解决方案浅谈.md](跨平台_Uniapp/跨平台开发解决方案浅谈.md)
+   - [跨 平台开发解决方案浅谈.md](跨平台_Uniapp/跨%20平台开发解决方案浅谈.md)
 - :cupid:项目细节
    - [input上传文件type=file连续上传同名文件change事件只触发一次.md](项目细节/input上传文件type=file连续上传同名文件change事件只触发一次.md)
    - [resize.md](项目细节/resize.md)

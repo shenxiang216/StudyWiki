@@ -67,7 +67,10 @@ let content = ""
 components.forEach((item) => {
   content += `- :cupid:${item.name}\n`
   item.list.forEach((file) => {
-    content += `   - [${file}](${item.name}/${file})\n`
+    content += `   - [${file}](${item.name.replace(
+      /\s/g,
+      "%20"
+    )}/${file.replace(/\s/g, "%20")})\n`
   })
 })
 console.log(content)
