@@ -48,7 +48,7 @@
         loadSidebar: "/_sidebar.md",
         loadNavbar: false,
         coverpage: true,
-        subMaxLevel: 6,
+        subMaxLevel: 1,
         routerMode: "hash",
         auto2top: true,
         alias: {
@@ -88,26 +88,4 @@
     <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
   </body>
-  <!-- <script>
-    const decode = () => {
-      let dom = document
-        .getElementsByClassName("results-panel")[0]
-        .getElementsByClassName("matching-post")
-      if (!dom) return false
-      for (let i = 0; i < dom.length; i++) {
-        dom[i].getElementsByTagName("h2")[0].innerHTML = decodeURI(
-          dom[i].getElementsByTagName("h2")[0].innerText
-        )
-      }
-    }
-    window.addEventListener("load", function () {
-      let input = document
-        .getElementsByClassName("input-wrap")[0]
-        .getElementsByTagName("input")[0]
-      input.onchange = function (e) {
-        console.log("解码中...")
-        decode()
-      }
-    })
-  </script> -->
 </html>
