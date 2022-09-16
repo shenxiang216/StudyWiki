@@ -3,5 +3,5 @@
 > 个人知识库
 
 [Blog](https://mmyxyz.xyz)
-[LightPass](https://light.mmyxyz.xyz)
+[个人主站](https://mmyxyz.xyz)
 [开始使用](/README.md)
