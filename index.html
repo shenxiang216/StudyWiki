@@ -1,10 +1,3 @@
-<!--
- * @Author: Deep Lane
- * @Date: 2022-03-09 11:23:40
- * @LastEditors: 赵亚鑫Deep Lane
- * @LastEditTime: 2022-04-19 13:31:25
- * @Description: 
--->
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
@@ -17,7 +10,7 @@
       content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
     />
     <meta name="referrer" content="no-referrer" />
-    <link rel="icon" href="./favicon.ico" />
+    <link rel="icon" href="./favicon.svg" />
     <link
       rel="stylesheet"
       href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css"
@@ -51,68 +44,48 @@
     <script>
       window.$docsify = {
         name: "Deep Lane's Wiki",
-        repo: '',
-        loadSidebar: '/_sidebar.md',
+        repo: "",
+        loadSidebar: "/_sidebar.md",
         loadNavbar: false,
         coverpage: true,
-        subMaxLevel: 6,
-        routerMode: 'hash',
+        subMaxLevel: 0,
+        routerMode: "hash",
         auto2top: true,
         alias: {
-          '/.*/_sidebar.md': '/_sidebar.md',
+          "/.*/_sidebar.md": "/_sidebar.md"
         },
         // 复制样式
         copyCode: {
-          buttonText: '复制代码',
-          errorText: 'Error',
-          successText: '复制成功!',
+          buttonText: "复制代码",
+          errorText: "Error",
+          successText: "复制成功!"
         },
         // 完整配置参数
         search: {
           maxAge: 86400000, // 过期时间，单位毫秒，默认一天
           // paths: [], // or 'auto'，匹配文件路径
-          placeholder: '在这里搜索', // 搜索提示框文字， 支持本地化，例子在下面
+          placeholder: "在这里搜索", // 搜索提示框文字， 支持本地化，例子在下面
           // placeholder: {
           //   '/zh-cn/': '搜索',
           //   '/': 'Type to search'
           // },
-          noData: '找不到结果', // 找不到结果文字提示，支持本地化，例子在下面
+          noData: "找不到结果", // 找不到结果文字提示，支持本地化，例子在下面
           // noData: {
           //   '/zh-cn/': '找不到结果',
           //   '/': 'No Results'
           // },
-          depth: 6, // 搜索标题的最大程级, 1 - 6
-        },
+          depth: 6 // 搜索标题的最大程级, 1 - 6
+        }
       }
     </script>
     <!-- Docsify v4 -->
     <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
     <!-- 引入搜索模块 -->
-    <script src="//unpkg.com/docsify/lib/plugins/search.js"></script>
+    <!-- <script src="//unpkg.com/docsify/lib/plugins/search.js"></script> -->
+    <script type="text/javascript" src="./search.js"></script>
+
     <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
     <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
   </body>
-  <script>
-    const decode = () => {
-      let dom = document
-        .getElementsByClassName('results-panel')[0]
-        .getElementsByClassName('matching-post')
-      if (!dom) return false
-      for (let i = 0; i < dom.length; i++) {
-        dom[i].getElementsByTagName('h2')[0].innerHTML = decodeURI(
-          dom[i].getElementsByTagName('h2')[0].innerText
-        )
-      }
-    }
-    window.addEventListener('load', function () {
-      let input = document
-        .getElementsByClassName('input-wrap')[0]
-        .getElementsByTagName('input')[0]
-      input.onchange = function (e) {
-        console.log('解码中...')
-        decode()
-      }
-    })
-  </script>
 </html>
