@@ -1,0 +1,64 @@
+<!--
+ * @Author: Deep Lane
+ * @Date: 2022-03-02 10:59:07
+ * @LastEditors: Deep Lane
+ * @LastEditTime: 2022-03-02 19:21:41
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parallax Scrolling</title>
+  </head>
+  <style>
+    body {
+        --img1: https://img.syt5.com/2021/0716/20210716093839415.jpg.420.420.jpg;
+            --img2: https: //rumenz.com/static/cimg/img/demo2.jpg;
+            --img3: https: //img95.699pic.com/photo/40094/7630.jpg_wh300.jpg;
+    }
+
+
+    div {
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.7);
+        color: #fff;
+        line-height: 100vh;
+        text-align: center;
+        font-size: 20vh;
+    }
+
+    .a-img1 {
+        background-image: url(https://img.syt5.com/2021/0716/20210716093839415.jpg.420.420.jpg);
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center center;
+    }
+
+    .a-img2 {
+        background-image: url(https://img95.699pic.com/photo/50059/6788.jpg_wh300.jpg);
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center center;
+    }
+
+    .a-img3 {
+        background-image: url(http://pic.bizhi360.com/bpic/57/7057.jpg);
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center center;
+    }
+  </style>
+
+  <body>
+    <div class="a-text">1</div>
+    <div class="a-img1">2</div>
+    <div class="a-text">3</div>
+    <div class="a-img2">4</div>
+    <div class="a-text">5</div>
+    <div class="a-img3">6</div>
+    <div class="a-text">7</div>
+  </body>
+</html>
